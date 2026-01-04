@@ -351,7 +351,7 @@ const CTASection = () => {
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <a 
-              href="tel:+919876543210"
+              href="tel:+917217251263"
               className="px-8 py-4 bg-white text-stone-950 font-bold text-lg rounded-sm hover:bg-stone-200 transition-colors w-full md:w-auto min-w-[180px]"
             >
               Call Now

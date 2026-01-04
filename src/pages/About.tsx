@@ -636,7 +636,7 @@ const About = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-5">
               {/* Primary Button */}
               <a
-                href="tel:+919876543210"
+                href="tel:+917217251263"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-sm hover:bg-blue-500 transition-all shadow-lg shadow-blue-900/30 hover:-translate-y-0.5"
               >
                 <Phone className="mr-2 w-5 h-5" /> Call Now
@@ -644,7 +644,7 @@ const About = () => {
 
               {/* Secondary Button */}
               <a
-                href="mailto:info@sonyaircon.com"
+                href="mailto:Sparshplywood@gmail.com"
                 className="inline-flex items-center justify-center px-8 py-4 border border-slate-500 text-white font-bold rounded-sm hover:bg-slate-800 hover:border-slate-400 transition-all"
               >
                 <Mail className="mr-2 w-5 h-5" /> Email Us

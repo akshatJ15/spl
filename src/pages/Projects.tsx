@@ -356,7 +356,7 @@ const Projects = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <a
-              href="tel:+919876543210"
+              href="tel:+917217251263"
               className="group bg-white text-slate-900 hover:bg-blue-50 px-8 py-4 font-semibold tracking-wide rounded-sm shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all flex items-center justify-center min-w-[200px]"
             >
               <Phone className="mr-2 w-5 h-5 text-blue-600" />

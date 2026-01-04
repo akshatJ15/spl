@@ -36,10 +36,17 @@ const Footer = () => {
               Defining the art of interiors since 1999. We craft premium plywood and decorative laminates that stand the test of time and trend.
             </p>
             <div className="flex gap-4 pt-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+              {[
+                { Icon: Facebook, url: "https://facebook.com" },
+                { Icon: Twitter, url: "https://twitter.com" },
+                { Icon: Instagram, url: "https://instagram.com" },
+                { Icon: Linkedin, url: "https://linkedin.com" }
+              ].map(({ Icon, url }, i) => (
                 <a 
                   key={i} 
-                  href="#" 
+                  href={url} 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-stone-900 flex items-center justify-center text-stone-500 hover:bg-amber-500 hover:text-stone-950 transition-all duration-300 border border-stone-800 hover:border-amber-500"
                 >
                   <Icon className="w-4 h-4" />
@@ -107,12 +114,12 @@ const Footer = () => {
               
               <div className="flex items-center space-x-3 group">
                 <Phone className="w-5 h-5 text-amber-600 shrink-0 group-hover:text-amber-500 transition-colors" />
-                <span className="text-sm text-stone-300 group-hover:text-white transition-colors">+91 987 654 3210</span>
+                <a href="tel:+917217251263" className="text-sm text-stone-300 group-hover:text-white transition-colors hover:text-amber-500">+91 721 725 1263</a>
               </div>
               
               <div className="flex items-center space-x-3 group">
                 <Mail className="w-5 h-5 text-amber-600 shrink-0 group-hover:text-amber-500 transition-colors" />
-                <span className="text-sm text-stone-300 group-hover:text-white transition-colors">sales@spl-india.com</span>
+                <a href="mailto:Sparshplywood@gmail.com" className="text-sm text-stone-300 group-hover:text-white transition-colors hover:text-amber-500">Sparshplywood@gmail.com</a>
               </div>
 
               <div className="flex items-start space-x-3 pt-4 border-t border-stone-900 mt-2">
@@ -133,9 +140,9 @@ const Footer = () => {
               © {new Date().getFullYear()} Sparsh Plywood & Laminates. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-8">
-              <a href="#" className="text-sm text-stone-600 hover:text-amber-500 transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-stone-600 hover:text-amber-500 transition-colors">Terms of Service</a>
-              <a href="#" className="text-sm text-stone-600 hover:text-amber-500 transition-colors">Sitemap</a>
+              <a href="/" className="text-sm text-stone-600 hover:text-amber-500 transition-colors">Privacy Policy</a>
+              <a href="/" className="text-sm text-stone-600 hover:text-amber-500 transition-colors">Terms of Service</a>
+              <a href="/" className="text-sm text-stone-600 hover:text-amber-500 transition-colors">Sitemap</a>
             </div>
           </div>
         </div>

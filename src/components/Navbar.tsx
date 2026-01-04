@@ -15,6 +15,7 @@ const Navbar = () => {
     { name: 'Products', href: '/products' },
     // { name: 'Services', href: '/services' }, // Optional based on your request
     { name: 'E-Catalogue', href: '/catalogue' },
+    { name: 'Visit Us', href: '/visitus' },
     // { name: 'About Us', href: '/about' },
   ];
 
@@ -29,7 +30,7 @@ const Navbar = () => {
 
   // Determine if navbar should be transparent
   // Transparent ONLY on specific pages at the very top
-  const transparentPages = ['/', '/products', '/about'];
+  const transparentPages = ['/', '/products', '/about', '/catalogue', '/visitus'];
   const isTransparent = transparentPages.includes(location.pathname) && !scrolled && !isOpen;
 
   // Helper to check active state
@@ -158,10 +159,10 @@ const Navbar = () => {
               Get Free Quote
             </Link>
             <a
-              href="tel:+919876543210"
+              href="tel:+917217251263"
               className="w-full border border-stone-200 text-stone-600 font-bold py-4 rounded-sm flex items-center justify-center gap-2 hover:bg-stone-900 hover:text-white transition-colors text-sm uppercase"
             >
-              <Phone className="w-4 h-4" /> +91 987 654 3210
+              <Phone className="w-4 h-4" /> +91 721 725 1263
             </a>
           </div>
         </div>

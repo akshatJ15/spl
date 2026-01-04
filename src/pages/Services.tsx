@@ -524,7 +524,7 @@ const Services = () => {
             {/* Right Action */}
             <div className="w-full lg:w-auto shrink-0 text-center lg:text-right">
               <a
-                href="tel:+919876543210"
+                href="tel:+917217251263"
                 className="group flex items-center justify-center w-full lg:w-auto gap-3 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-sm shadow-md transition-all shadow-red-100"
               >
                 <Phone className="w-5 h-5 group-hover:animate-pulse" />
@@ -583,7 +583,7 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-5">
               {/* Primary Button (Phone Link Added) */}
               <a
-                href="tel:+919876543210"
+                href="tel:+917217251263"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-sm hover:bg-blue-500 transition-all shadow-lg shadow-blue-900/30 hover:-translate-y-0.5 w-full sm:w-auto"
               >
                 <Phone className="mr-2 w-5 h-5" /> Book Apponitment

@@ -15,10 +15,11 @@ import {
   Snowflake,
   Wind,
 } from 'lucide-react';
-import heroImage from '../Images/Projects.jpg'; 
 import Navbar from '../components/Navbar';
 import { motion, Variants, AnimatePresence } from 'framer-motion';
 import CountUp from 'react-countup';
+
+const heroImage = 'https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg?auto=compress&cs=tinysrgb&w=1600';
 
 const About = () => {
 
@@ -160,18 +161,23 @@ const About = () => {
       
       {/* ================= HERO SECTION ================= */}
       <div className="relative w-full h-[80vh] min-h-[500px] flex flex-col">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 z-0"
-          style={{ 
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        >
-          {/* Corporate Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-slate-900/30"></div>
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={heroImage}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: 'easeOut' }}
+            className="absolute inset-0 z-0"
+            style={{ 
+              backgroundImage: `url(${heroImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-slate-900/30"></div>
+          </motion.div>
+        </AnimatePresence>
 
         {/* Navbar */}
         <div className="relative z-20 w-full border-b border-white/10">

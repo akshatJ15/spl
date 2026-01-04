@@ -9,9 +9,10 @@ import {
   AlertTriangle,
   Settings,
 } from "lucide-react";
-import heroImage from "../Images/Service_Image.jpg";
 import Navbar from "../components/Navbar";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, AnimatePresence } from "framer-motion";
+
+const heroImage = "https://images.pexels.com/photos/8005394/pexels-photo-8005394.jpeg?auto=compress&cs=tinysrgb&w=1600";
 
 const Services = () => {
   // --- Animation Variants ---
@@ -162,16 +163,23 @@ const Services = () => {
     <div className="font-sans text-slate-800 bg-white selection:bg-blue-600 selection:text-white">
       {/* ================= HERO SECTION (Navbar Inside) ================= */}
       <div className="relative w-full h-screen min-h-[600px] flex flex-col">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-slate-900/30"></div>
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={heroImage}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `url(${heroImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-slate-900/30"></div>
+          </motion.div>
+        </AnimatePresence>
 
         <div className="relative z-20 w-full border-b border-white/10">
           <Navbar />
@@ -534,17 +542,27 @@ const Services = () => {
 
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* 1. Background Layers */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-slate-950"></div>
-        <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        ></div>
-        <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600/20 rounded-full blur-[80px] md:blur-[120px] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-cyan-500/10 rounded-full blur-[60px] md:blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url(https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=1600)",
+            }}
+          />
+          <div className="absolute inset-0 bg-slate-950/70" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-slate-900 via-slate-900/90 to-slate-950"></div>
+          <div
+            className="absolute inset-0 opacity-[0.07]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)",
+              backgroundSize: "40px 40px",
+            }}
+          ></div>
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600/25 rounded-full blur-[80px] md:blur-[120px] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-cyan-500/15 rounded-full blur-[60px] md:blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+        </div>
 
         {/* 2. Content Container */}
         <div className="container mx-auto px-4 sm:px-6 md:px-6 text-center relative z-10">

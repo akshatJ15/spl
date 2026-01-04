@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { MapPin, Phone, FileText, Folder } from "lucide-react";
-import heroImage from "../Images/Projects.jpg";
 import Navbar from "../components/Navbar";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 import CountUp from "react-countup";
 import { categories, projects } from "../constants/projects";
 import { Building2 } from "lucide-react";
+
+const heroImage = "https://images.pexels.com/photos/257704/pexels-photo-257704.jpeg?auto=compress&cs=tinysrgb&w=1600";
 
 const Projects = () => {
   useEffect(() => {
@@ -53,16 +54,23 @@ const Projects = () => {
     <div className="font-sans text-slate-800 bg-white selection:bg-blue-600 selection:text-white">
       {/* ================= HERO SECTION ================= */}
       <div className="relative w-full h-[80vh] md:h-600px min-h-[500px] flex flex-col">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-slate-900/30"></div>
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={heroImage}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `url(${heroImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-slate-900/30"></div>
+          </motion.div>
+        </AnimatePresence>
 
         <div className="relative z-20 w-full border-b border-white/10">
           <Navbar />
